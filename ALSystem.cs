@@ -15,7 +15,7 @@ namespace raylib_proj
         protected Vector2 basePosition;
         protected Vector2 currentPosition;
         protected int length;
-        protected Dictionary<char, string> rules; 
+        protected Dictionary<char, string> rules;
 
         public void DrawLSystem()
         {
@@ -31,22 +31,22 @@ namespace raylib_proj
 
         public void Generate()
         {
-            string nextWord = "";
+            StringBuilder stringBuilder = new StringBuilder();
 
             for (int i = 0; i < word.Length; i++)
             {
                 var c = word[i];
                 if (rules.ContainsKey(c))
                 {
-                    nextWord += rules[c];
+                    stringBuilder.Append(rules[c]);
                 }
                 else
                 {
-                    nextWord += c;
+                    stringBuilder.Append(c);
                 }
             }
 
-            word = nextWord;
+            word = stringBuilder.ToString();
         }
     }
 }

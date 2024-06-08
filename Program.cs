@@ -11,7 +11,7 @@ class Program
 
     public static void Main()
     {
-        LSystem plant = new DragonCurve();
+        LSystem lsystem = new FractalPlant();
         Raylib.InitWindow(1600, 900, "L-System");
 
         while (!Raylib.WindowShouldClose())
@@ -21,9 +21,9 @@ class Program
             Raylib.ClearBackground(Color.White);
             if (Raylib.IsKeyPressed(KeyboardKey.Space))
             {
-                plant.Generate();
+                lsystem.Generate();
             }
-            plant.DrawLSystem();
+            lsystem.DrawLSystem();
             Raylib.EndDrawing();
         }
 
