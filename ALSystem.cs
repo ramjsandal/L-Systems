@@ -6,8 +6,8 @@ namespace raylib_proj
     internal abstract class ALSystem : LSystem
     {
         protected string word;
-        protected int baseAngle;
-        protected int currentAngle;
+        protected double baseAngle;
+        protected double currentAngle;
         protected Vector2 basePosition;
         protected Vector2 currentPosition;
         protected int length;

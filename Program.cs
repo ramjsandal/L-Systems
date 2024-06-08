@@ -8,7 +8,7 @@ class Program
 
     public static void Main()
     {
-        LSystem lsystem = new KochCurve();
+        LSystem lsystem = new Tree1();
         Raylib.InitWindow(1600, 900, "L-System");
 
         while (!Raylib.WindowShouldClose())

@@ -3,21 +3,20 @@ using System.Numerics;
 
 namespace raylib_proj
 {
-    internal class FractalPlant : ALSystem
+    internal class Tree1 : ALSystem
     {
 
         Stack<(Vector2, double)> values = new Stack<(Vector2, double)>();
 
-        public FractalPlant()
+        public Tree1()
         {
-            word = "X";
-            baseAngle = -25;
-            basePosition = new Vector2(0, 900);
-            length = 2;
+            word = "F";
+            baseAngle = 25.7;
+            basePosition = new Vector2(400, 400);
+            length = 5;
             rules = new Dictionary<char, string>()
             {
-                { 'X', "F+[[X]-X]-F[-FX]+X" },
-                { 'F', "FF" }
+                { 'F', "F[+F]F[-F]F" },
             };
         }
         public override void DrawRules(char c)
@@ -51,7 +50,6 @@ namespace raylib_proj
                     Console.WriteLine($"Invalid Argument: {c}");
                     break;
             }
-
         }
     }
 }
