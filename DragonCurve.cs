@@ -8,7 +8,8 @@ namespace raylib_proj
         public DragonCurve()
         {
             word = "F";
-            baseAngle = 90;
+            angleIncrement = 90;
+            baseAngle = -90;
             basePosition = new Vector2(800, 400);
             length = 10;
             rules = new Dictionary<char, string>()
@@ -30,10 +31,10 @@ namespace raylib_proj
                     currentPosition = end;
                     break;
                 case '-':
-                    currentAngle -= baseAngle;
+                    currentAngle -= angleIncrement;
                     break;
                 case '+':
-                    currentAngle += baseAngle;
+                    currentAngle += angleIncrement;
                     break;
                 default:
                     Console.WriteLine($"Invalid Argument: {c}");

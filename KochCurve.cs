@@ -8,6 +8,7 @@ namespace raylib_proj
         public KochCurve()
         {
             word = "F";
+            angleIncrement = 90;
             baseAngle = 90;
             basePosition = new Vector2(800, 400);
             length = 5;
@@ -28,10 +29,10 @@ namespace raylib_proj
                     currentPosition = end;
                     break;
                 case '-':
-                    currentAngle -= baseAngle;
+                    currentAngle -= angleIncrement;
                     break;
                 case '+':
-                    currentAngle += baseAngle;
+                    currentAngle += angleIncrement;
                     break;
                 default:
                     Console.WriteLine($"Invalid Argument: {c}");

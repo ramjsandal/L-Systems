@@ -9,6 +9,7 @@ namespace raylib_proj
         public SierpinskiTriangle()
         {
             word = "F-G-G";
+            angleIncrement = 120;
             baseAngle = 120;
             basePosition = new Vector2(800, 0);
             length = 2;
@@ -32,10 +33,10 @@ namespace raylib_proj
                     currentPosition = end;
                     break;
                 case '-':
-                    currentAngle -= baseAngle;
+                    currentAngle -= angleIncrement;
                     break;
                 case '+':
-                    currentAngle += baseAngle;
+                    currentAngle += angleIncrement;
                     break;
                 default:
                     Console.WriteLine($"Invalid Argument: {c}");

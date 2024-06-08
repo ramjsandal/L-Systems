@@ -11,8 +11,9 @@ namespace raylib_proj
         public Tree1()
         {
             word = "F";
-            baseAngle = 25.7;
-            basePosition = new Vector2(400, 400);
+            angleIncrement = 25.7;
+            baseAngle = -90;
+            basePosition = new Vector2(400, 900);
             length = 5;
             rules = new Dictionary<char, string>()
             {
@@ -31,10 +32,10 @@ namespace raylib_proj
                     currentPosition = end;
                     break;
                 case '-':
-                    currentAngle -= baseAngle;
+                    currentAngle -= angleIncrement;
                     break;
                 case '+':
-                    currentAngle += baseAngle;
+                    currentAngle += angleIncrement;
                     break;
                 case '[':
                     values.Push((currentPosition, currentAngle));

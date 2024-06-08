@@ -11,6 +11,7 @@ namespace raylib_proj
         public FractalPlant()
         {
             word = "X";
+            angleIncrement = -25;
             baseAngle = -25;
             basePosition = new Vector2(0, 900);
             length = 2;
@@ -32,10 +33,10 @@ namespace raylib_proj
                     currentPosition = end;
                     break;
                 case '-':
-                    currentAngle -= baseAngle;
+                    currentAngle -= angleIncrement;
                     break;
                 case '+':
-                    currentAngle += baseAngle;
+                    currentAngle += angleIncrement;
                     break;
                 case '[':
                     values.Push((currentPosition, currentAngle));

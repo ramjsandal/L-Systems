@@ -7,6 +7,7 @@ namespace raylib_proj
     {
         protected string word;
         protected double baseAngle;
+        protected double angleIncrement;
         protected double currentAngle;
         protected Vector2 basePosition;
         protected Vector2 currentPosition;
