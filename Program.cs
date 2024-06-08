@@ -11,7 +11,7 @@ class Program
 
     public static void Main()
     {
-        LSystem plant = new SierpinskiTriangle();
+        LSystem plant = new FractalPlant();
         Raylib.InitWindow(1600, 900, "L-System");
 
         while (!Raylib.WindowShouldClose())

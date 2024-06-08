@@ -8,28 +8,10 @@ using System.Threading.Tasks;
 
 namespace raylib_proj
 {
-    internal class FractalPlant : LSystem
+    internal class FractalPlant : ALSystem
     {
-
-        string word;
-
-        int baseAngle;
-
-        Vector2 basePosition;
-
-        int length;
 
         Stack<(Vector2, int)> values = new Stack<(Vector2, int)>();
-
-        int currentAngle;
-
-        Vector2 currentPosition;
-
-        public static Dictionary<char, string> rules = new Dictionary<char, string>()
-    {
-        { 'X', "F+[[X]-X]-F[-FX]+X" },
-        { 'F', "FF" }
-    };
 
         public FractalPlant()
         {
@@ -37,20 +19,13 @@ namespace raylib_proj
             baseAngle = -25;
             basePosition = new Vector2(0, 900);
             length = 2;
-        }
-
-
-        public void DrawLSystem()
-        {
-            currentAngle = baseAngle;
-            currentPosition = basePosition;
-            for (int i = 0; i < word.Length; i++)
+            rules = new Dictionary<char, string>()
             {
-                DrawRules(word[i]);
-            }
+                { 'X', "F+[[X]-X]-F[-FX]+X" },
+                { 'F', "FF" }
+            };
         }
-
-        public void DrawRules(char c)
+        public override void DrawRules(char c)
         {
             switch (c)
             {
@@ -82,26 +57,6 @@ namespace raylib_proj
                     break;
             }
 
-        }
-
-        public void Generate()
-        {
-            string nextWord = "";
-
-            for (int i = 0; i < word.Length; i++)
-            {
-                var c = word[i];
-                if (rules.ContainsKey(c))
-                {
-                    nextWord += rules[c];
-                }
-                else
-                {
-                    nextWord += c;
-                }
-            }
-
-            word = nextWord;
         }
     }
 }
