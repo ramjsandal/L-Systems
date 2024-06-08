@@ -33,7 +33,7 @@ namespace raylib_proj
         {
             word = "F-G-G";
             baseAngle = 120;
-            basePosition = new Vector2(0, 900);
+            basePosition = new Vector2(800,0);
             length = 2;
         }
 
