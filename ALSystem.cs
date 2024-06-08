@@ -17,8 +17,6 @@ namespace raylib_proj
         protected int length;
         protected Dictionary<char, string> rules; 
 
-
-
         public void DrawLSystem()
         {
             currentAngle = baseAngle;

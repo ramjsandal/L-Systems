@@ -11,7 +11,7 @@ class Program
 
     public static void Main()
     {
-        LSystem plant = new FractalPlant();
+        LSystem plant = new DragonCurve();
         Raylib.InitWindow(1600, 900, "L-System");
 
         while (!Raylib.WindowShouldClose())
