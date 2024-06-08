@@ -15,7 +15,7 @@ class Program
 
     int length;
 
-    Stack<(Vector2, int)> values = new Stack<(Vector2, int)> ();
+    Stack<(Vector2, int)> values = new Stack<(Vector2, int)>();
 
     int currentAngle;
 
@@ -23,7 +23,7 @@ class Program
 
 
     public Program()
-    { 
+    {
         word = "X";
         baseAngle = -25;
         basePosition = new Vector2(0, 900);
@@ -56,18 +56,11 @@ class Program
         switch (c)
         {
             case 'F':
-                /*
-                double angleInRadians = values.Peek().Item2 * Math.PI / 180.0;
-                Vector2 end = new Vector2((float) (values.Peek().Item1.X + (length * Math.Cos(angleInRadians))), 
-                    (float) (values.Peek().Item1.Y + (length * Math.Sin(angleInRadians))));
-                Raylib.DrawLineV(values.Peek().Item1, end, Color.Black);
-                currentPosition = end;
-                */
                 double angleInRadians = currentAngle * Math.PI / 180.0;
-                Vector2 end = new Vector2((float) (currentPosition.X + (length * Math.Cos(angleInRadians))), 
-                    (float) (currentPosition.Y + (length * Math.Sin(angleInRadians))));
+                Vector2 end = new Vector2((float)(currentPosition.X + (length * Math.Cos(angleInRadians))),
+                    (float)(currentPosition.Y + (length * Math.Sin(angleInRadians))));
                 Raylib.DrawLineV(currentPosition, end, Color.Black);
-                currentPosition = end; 
+                currentPosition = end;
                 break;
             case '-':
                 currentAngle -= baseAngle;
@@ -80,8 +73,6 @@ class Program
                 break;
             case ']':
                 var val = values.Pop();
-                //currentPosition = values.Peek().Item1;
-                //currentAngle = values.Peek().Item2;
                 currentPosition = val.Item1;
                 currentAngle = val.Item2;
                 break;
@@ -103,8 +94,9 @@ class Program
             var c = word[i];
             if (rules.ContainsKey(c))
             {
-                nextWord += rules[c]; 
-            } else
+                nextWord += rules[c];
+            }
+            else
             {
                 nextWord += c;
             }
