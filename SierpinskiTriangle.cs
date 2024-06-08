@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace raylib_proj
 {
-    internal class FractalPlant : LSystem
+    internal class SierpinskiTriangle : LSystem
     {
 
         string word;
@@ -19,22 +19,20 @@ namespace raylib_proj
 
         int length;
 
-        Stack<(Vector2, int)> values = new Stack<(Vector2, int)>();
-
         int currentAngle;
 
         Vector2 currentPosition;
 
         public static Dictionary<char, string> rules = new Dictionary<char, string>()
     {
-        { 'X', "F+[[X]-X]-F[-FX]+X" },
-        { 'F', "FF" }
+        { 'F', "F-G+F+G-F" },
+        { 'G', "GG" }
     };
 
-        public FractalPlant()
+        public SierpinskiTriangle()
         {
-            word = "X";
-            baseAngle = -25;
+            word = "F-G-G";
+            baseAngle = 120;
             basePosition = new Vector2(0, 900);
             length = 2;
         }
@@ -55,6 +53,7 @@ namespace raylib_proj
             switch (c)
             {
                 case 'F':
+                case 'G':
                     double angleInRadians = currentAngle * Math.PI / 180.0;
                     Vector2 end = new Vector2((float)(currentPosition.X + (length * Math.Cos(angleInRadians))),
                         (float)(currentPosition.Y + (length * Math.Sin(angleInRadians))));
@@ -67,21 +66,10 @@ namespace raylib_proj
                 case '+':
                     currentAngle += baseAngle;
                     break;
-                case '[':
-                    values.Push((currentPosition, currentAngle));
-                    break;
-                case ']':
-                    var val = values.Pop();
-                    currentPosition = val.Item1;
-                    currentAngle = val.Item2;
-                    break;
-                case 'X':
-                    break;
                 default:
                     Console.WriteLine($"Invalid Argument: {c}");
                     break;
             }
-
         }
 
         public void Generate()
