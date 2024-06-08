@@ -37,8 +37,6 @@ namespace raylib_proj
             baseAngle = -25;
             basePosition = new Vector2(0, 900);
             length = 2;
-            currentAngle = baseAngle;
-            currentPosition = basePosition;
         }
 
 
