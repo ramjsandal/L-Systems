@@ -3,28 +3,24 @@ using System.Numerics;
 
 namespace raylib_proj
 {
-    internal class SierpinskiTriangle : ALSystem
+    internal class KochCurve : ALSystem
     {
-
-        public SierpinskiTriangle()
+        public KochCurve()
         {
-            word = "F-G-G";
-            baseAngle = 120;
-            basePosition = new Vector2(800, 0);
-            length = 2;
+            word = "F";
+            baseAngle = 90;
+            basePosition = new Vector2(800, 400);
+            length = 5;
             rules = new Dictionary<char, string>()
             {
-                { 'F', "F-G+F+G-F" },
-                { 'G', "GG" }
+                { 'F', "F+F-F-F+F" },
             };
         }
-
         public override void DrawRules(char c)
         {
             switch (c)
             {
                 case 'F':
-                case 'G':
                     double angleInRadians = currentAngle * Math.PI / 180.0;
                     Vector2 end = new Vector2((float)(currentPosition.X + (length * Math.Cos(angleInRadians))),
                         (float)(currentPosition.Y + (length * Math.Sin(angleInRadians))));
@@ -42,6 +38,5 @@ namespace raylib_proj
                     break;
             }
         }
-
     }
 }

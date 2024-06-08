@@ -1,8 +1,5 @@
 ﻿using Raylib_cs;
 using raylib_proj;
-using System.Collections.Specialized;
-using System.Formats.Asn1;
-using System.Numerics;
 
 namespace game;
 
@@ -11,7 +8,7 @@ class Program
 
     public static void Main()
     {
-        LSystem lsystem = new FractalPlant();
+        LSystem lsystem = new KochCurve();
         Raylib.InitWindow(1600, 900, "L-System");
 
         while (!Raylib.WindowShouldClose())
