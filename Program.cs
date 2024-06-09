@@ -8,7 +8,7 @@ class Program
 
     public static void Main()
     {
-        LSystem lsystem = new DragonCurve();
+        LSystem lsystem = new TreeB();
         Raylib.InitWindow(1600, 900, "L-System");
 
         while (!Raylib.WindowShouldClose())
