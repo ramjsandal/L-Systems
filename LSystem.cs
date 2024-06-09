@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Numerics;
 
 namespace raylib_proj
 {
@@ -13,6 +9,8 @@ namespace raylib_proj
         public void DrawLSystem();
 
         public void Generate();
+
+        public Vector2 GetPosition();
 
     }
 }

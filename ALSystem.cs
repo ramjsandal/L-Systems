@@ -45,5 +45,10 @@ namespace raylib_proj
 
             word = stringBuilder.ToString();
         }
+
+        public Vector2 GetPosition()
+        {
+            return basePosition;
+        }
     }
 }
