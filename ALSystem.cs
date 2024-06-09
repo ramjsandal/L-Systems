@@ -50,5 +50,10 @@ namespace raylib_proj
         {
             return basePosition;
         }
+
+        public void SetPosition(Vector2 position)
+        {
+            basePosition = position;
+        }
     }
 }

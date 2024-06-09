@@ -12,5 +12,7 @@ namespace raylib_proj
 
         public Vector2 GetPosition();
 
+        public void SetPosition(Vector2 position);
+
     }
 }

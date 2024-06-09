@@ -41,6 +41,8 @@ class Program
         int screenHeight = 900;
         Program program = new Program();
         LSystem lsystem = new TreeC();
+        LSystem lsystem2 = new TreeB();
+        lsystem2.SetPosition(new Vector2(lsystem.GetPosition().X + 200, lsystem.GetPosition().Y));
         Raylib.InitWindow(screenWidth, screenHeight, "L-System");
 
         Camera2D camera2D = new Camera2D();
@@ -61,8 +63,10 @@ class Program
             if (Raylib.IsKeyPressed(KeyboardKey.Space))
             {
                 lsystem.Generate();
+                lsystem2.Generate();
             }
             lsystem.DrawLSystem();
+            lsystem2.DrawLSystem();
             Raylib.EndMode2D();
             Raylib.EndDrawing();
         }
