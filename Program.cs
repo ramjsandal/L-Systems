@@ -8,7 +8,7 @@ class Program
 
     public static void Main()
     {
-        LSystem lsystem = new TreeB();
+        LSystem lsystem = new TreeC();
         Raylib.InitWindow(1600, 900, "L-System");
 
         while (!Raylib.WindowShouldClose())

@@ -3,21 +3,20 @@ using System.Numerics;
 
 namespace raylib_proj
 {
-    internal class TreeA : ALSystem
+    internal class TreeC : ALSystem
     {
-
         Stack<(Vector2, double)> values = new Stack<(Vector2, double)>();
 
-        public TreeA()
+        public TreeC()
         {
             word = "F";
-            angleIncrement = 25.7;
+            angleIncrement = 22.5;
             baseAngle = -90;
             basePosition = new Vector2(400, 900);
             length = 5;
             rules = new Dictionary<char, string>()
             {
-                { 'F', "F[+F]F[-F]F" },
+                { 'F', "FF-[-F+F+F]+[+F-F-F]" },
             };
         }
         public override void DrawRules(char c)
@@ -52,5 +51,6 @@ namespace raylib_proj
                     break;
             }
         }
+
     }
 }

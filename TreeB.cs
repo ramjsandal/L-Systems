@@ -1,10 +1,5 @@
 ﻿using Raylib_cs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace raylib_proj
 {
@@ -36,10 +31,10 @@ namespace raylib_proj
                     currentPosition = end;
                     break;
                 case '-':
-                    currentAngle -= angleIncrement;
+                    currentAngle += angleIncrement;
                     break;
                 case '+':
-                    currentAngle += angleIncrement;
+                    currentAngle -= angleIncrement;
                     break;
                 case '[':
                     values.Push((currentPosition, currentAngle));
